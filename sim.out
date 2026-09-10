@@ -1,0 +1,337 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 11;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2009.vpi";
+S_00000166d3ea7fc0 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_00000166d3ea8150 .scope module, "tb_register_file" "tb_register_file" 3 4;
+ .timescale -9 -11;
+P_00000166d3eae380 .param/real "CLK_PERIOD" 1 3 6, Cr<m5000000000000000gfc5>; value=10.0000
+P_00000166d3eae3b8 .param/l "TIMEOUT" 1 3 7, +C4<00000000000000000000001111101000>;
+v00000166d3f1dd70_0 .var "clk", 0 0;
+v00000166d3f1d0f0_0 .var "n_rst", 0 0;
+v00000166d3f1cfb0_0 .net "read_data1", 31 0, L_00000166d3f1cbf0;  1 drivers
+v00000166d3f1cb50_0 .net "read_data2", 31 0, L_00000166d3f1d4b0;  1 drivers
+v00000166d3f1dcd0_0 .var "read_reg1", 4 0;
+v00000166d3f1e450_0 .var "read_reg2", 4 0;
+v00000166d3f1d190_0 .var "reg_write", 0 0;
+v00000166d3f1e770_0 .var "write_data", 31 0;
+v00000166d3f1e3b0_0 .var "write_reg", 4 0;
+S_00000166d3eb43c0 .scope begin, "$ivl_for_loop1" "$ivl_for_loop1" 3 108, 3 108 0, S_00000166d3ea8150;
+ .timescale -9 -11;
+v00000166d3eaff40_0 .var/2s "i", 31 0;
+S_00000166d3eb4550 .scope module, "DUT" "register_file" 3 82, 4 1 0, S_00000166d3ea8150;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 1 "n_rst";
+    .port_info 2 /INPUT 1 "reg_write";
+    .port_info 3 /INPUT 5 "read_reg1";
+    .port_info 4 /INPUT 5 "read_reg2";
+    .port_info 5 /INPUT 5 "write_reg";
+    .port_info 6 /INPUT 32 "write_data";
+    .port_info 7 /OUTPUT 32 "read_data1";
+    .port_info 8 /OUTPUT 32 "read_data2";
+v00000166d3eaf7c0_0 .net *"_ivl_0", 31 0, L_00000166d3f1d410;  1 drivers
+v00000166d3eafae0_0 .net *"_ivl_10", 31 0, L_00000166d3f1d7d0;  1 drivers
+v00000166d3eaf720_0 .net *"_ivl_12", 6 0, L_00000166d3f1d050;  1 drivers
+L_00000166d3f1ffc0 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v00000166d3eaf860_0 .net *"_ivl_15", 1 0, L_00000166d3f1ffc0;  1 drivers
+v00000166d3eaf2c0_0 .net *"_ivl_18", 31 0, L_00000166d3f1d2d0;  1 drivers
+L_00000166d3f20008 .functor BUFT 1, C4<000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v00000166d3eaffe0_0 .net *"_ivl_21", 26 0, L_00000166d3f20008;  1 drivers
+L_00000166d3f20050 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v00000166d3eaf900_0 .net/2u *"_ivl_22", 31 0, L_00000166d3f20050;  1 drivers
+v00000166d3eafb80_0 .net *"_ivl_24", 0 0, L_00000166d3f1d730;  1 drivers
+L_00000166d3f20098 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v00000166d3eafc20_0 .net/2u *"_ivl_26", 31 0, L_00000166d3f20098;  1 drivers
+v00000166d3eaf9a0_0 .net *"_ivl_28", 31 0, L_00000166d3f1ce70;  1 drivers
+L_00000166d3f1fee8 .functor BUFT 1, C4<000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v00000166d3eafe00_0 .net *"_ivl_3", 26 0, L_00000166d3f1fee8;  1 drivers
+v00000166d3eafea0_0 .net *"_ivl_30", 6 0, L_00000166d3f1de10;  1 drivers
+L_00000166d3f200e0 .functor BUFT 1, C4<00>, C4<0>, C4<0>, C4<0>;
+v00000166d3eaf360_0 .net *"_ivl_33", 1 0, L_00000166d3f200e0;  1 drivers
+L_00000166d3f1ff30 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v00000166d3eaf400_0 .net/2u *"_ivl_4", 31 0, L_00000166d3f1ff30;  1 drivers
+v00000166d3eaf540_0 .net *"_ivl_6", 0 0, L_00000166d3f1e630;  1 drivers
+L_00000166d3f1ff78 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v00000166d3f1df50_0 .net/2u *"_ivl_8", 31 0, L_00000166d3f1ff78;  1 drivers
+v00000166d3f1e310_0 .net "clk", 0 0, v00000166d3f1dd70_0;  1 drivers
+v00000166d3f1e1d0_0 .net "n_rst", 0 0, v00000166d3f1d0f0_0;  1 drivers
+v00000166d3f1d9b0_0 .net "read_data1", 31 0, L_00000166d3f1cbf0;  alias, 1 drivers
+v00000166d3f1e4f0_0 .net "read_data2", 31 0, L_00000166d3f1d4b0;  alias, 1 drivers
+v00000166d3f1d550_0 .net "read_reg1", 4 0, v00000166d3f1dcd0_0;  1 drivers
+v00000166d3f1deb0_0 .net "read_reg2", 4 0, v00000166d3f1e450_0;  1 drivers
+v00000166d3f1dc30_0 .net "reg_write", 0 0, v00000166d3f1d190_0;  1 drivers
+v00000166d3f1ca10 .array "rf", 0 31, 31 0;
+v00000166d3f1e590_0 .net "write_data", 31 0, v00000166d3f1e770_0;  1 drivers
+v00000166d3f1dff0_0 .net "write_reg", 4 0, v00000166d3f1e3b0_0;  1 drivers
+E_00000166d3ec90b0/0 .event negedge, v00000166d3f1e1d0_0;
+E_00000166d3ec90b0/1 .event posedge, v00000166d3f1e310_0;
+E_00000166d3ec90b0 .event/or E_00000166d3ec90b0/0, E_00000166d3ec90b0/1;
+L_00000166d3f1d410 .concat [ 5 27 0 0], v00000166d3f1dcd0_0, L_00000166d3f1fee8;
+L_00000166d3f1e630 .cmp/eq 32, L_00000166d3f1d410, L_00000166d3f1ff30;
+L_00000166d3f1d7d0 .array/port v00000166d3f1ca10, L_00000166d3f1d050;
+L_00000166d3f1d050 .concat [ 5 2 0 0], v00000166d3f1dcd0_0, L_00000166d3f1ffc0;
+L_00000166d3f1cbf0 .functor MUXZ 32, L_00000166d3f1d7d0, L_00000166d3f1ff78, L_00000166d3f1e630, C4<>;
+L_00000166d3f1d2d0 .concat [ 5 27 0 0], v00000166d3f1e450_0, L_00000166d3f20008;
+L_00000166d3f1d730 .cmp/eq 32, L_00000166d3f1d2d0, L_00000166d3f20050;
+L_00000166d3f1ce70 .array/port v00000166d3f1ca10, L_00000166d3f1de10;
+L_00000166d3f1de10 .concat [ 5 2 0 0], v00000166d3f1e450_0, L_00000166d3f200e0;
+L_00000166d3f1d4b0 .functor MUXZ 32, L_00000166d3f1ce70, L_00000166d3f20098, L_00000166d3f1d730, C4<>;
+S_00000166d3eb3960 .scope begin, "$ivl_for_loop0" "$ivl_for_loop0" 4 11, 4 11 0, S_00000166d3eb4550;
+ .timescale 0 0;
+v00000166d3eaf680_0 .var/2s "i", 31 0;
+S_00000166d3eb3af0 .scope task, "read_register" "read_register" 3 57, 3 57 0, S_00000166d3ea8150;
+ .timescale -9 -11;
+v00000166d3f1d230_0 .var "exp_1", 31 0;
+v00000166d3f1cf10_0 .var "exp_2", 31 0;
+v00000166d3f1e810_0 .var "read_addr1", 4 0;
+v00000166d3f1d370_0 .var "read_addr2", 4 0;
+E_00000166d3ec92f0 .event negedge, v00000166d3f1e310_0;
+TD_tb_register_file.read_register ;
+    %wait E_00000166d3ec92f0;
+    %load/vec4 v00000166d3f1e810_0;
+    %store/vec4 v00000166d3f1dcd0_0, 0, 5;
+    %load/vec4 v00000166d3f1d370_0;
+    %store/vec4 v00000166d3f1e450_0, 0, 5;
+    %delay 100, 0;
+    %load/vec4 v00000166d3f1cfb0_0;
+    %load/vec4 v00000166d3f1d230_0;
+    %cmp/ne;
+    %jmp/0xz  T_0.0, 6;
+    %vpi_call/w 3 69 "$display", "Expected %08h, got %08h on Port 1 (reg %0d)", v00000166d3f1d230_0, v00000166d3f1cfb0_0, v00000166d3f1e810_0 {0 0 0};
+    %jmp T_0.1;
+T_0.0 ;
+    %vpi_call/w 3 71 "$display", "Register %0d returned correct value: %08h", v00000166d3f1e810_0, v00000166d3f1cfb0_0 {0 0 0};
+T_0.1 ;
+    %load/vec4 v00000166d3f1cb50_0;
+    %load/vec4 v00000166d3f1cf10_0;
+    %cmp/ne;
+    %jmp/0xz  T_0.2, 6;
+    %vpi_call/w 3 75 "$display", "Expected %08h, got %08h on Port 2 (reg %0d)", v00000166d3f1cf10_0, v00000166d3f1cb50_0, v00000166d3f1d370_0 {0 0 0};
+    %jmp T_0.3;
+T_0.2 ;
+    %vpi_call/w 3 77 "$display", "Register %0d returned correct value: %08h", v00000166d3f1d370_0, v00000166d3f1cb50_0 {0 0 0};
+T_0.3 ;
+    %end;
+S_00000166d3eb3c80 .scope task, "reset_dut" "reset_dut" 3 31, 3 31 0, S_00000166d3ea8150;
+ .timescale -9 -11;
+E_00000166d3ec9130 .event posedge, v00000166d3f1e310_0;
+TD_tb_register_file.reset_dut ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000166d3f1d0f0_0, 0, 1;
+    %wait E_00000166d3ec9130;
+    %wait E_00000166d3ec9130;
+    %wait E_00000166d3ec92f0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000166d3f1d0f0_0, 0, 1;
+    %wait E_00000166d3ec92f0;
+    %wait E_00000166d3ec92f0;
+    %end;
+S_00000166d3f1f940 .scope task, "write_register" "write_register" 3 43, 3 43 0, S_00000166d3ea8150;
+ .timescale -9 -11;
+v00000166d3f1c970_0 .var "write_addr", 4 0;
+v00000166d3f1cab0_0 .var "write_datas", 31 0;
+TD_tb_register_file.write_register ;
+    %wait E_00000166d3ec92f0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000166d3f1d190_0, 0, 1;
+    %load/vec4 v00000166d3f1c970_0;
+    %store/vec4 v00000166d3f1e3b0_0, 0, 5;
+    %load/vec4 v00000166d3f1cab0_0;
+    %store/vec4 v00000166d3f1e770_0, 0, 32;
+    %wait E_00000166d3ec92f0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000166d3f1d190_0, 0, 1;
+    %end;
+    .scope S_00000166d3eb4550;
+T_3 ;
+    %wait E_00000166d3ec90b0;
+    %load/vec4 v00000166d3f1e1d0_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.0, 8;
+    %fork t_1, S_00000166d3eb3960;
+    %jmp t_0;
+    .scope S_00000166d3eb3960;
+t_1 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000166d3eaf680_0, 0, 32;
+T_3.2 ;
+    %load/vec4 v00000166d3eaf680_0;
+    %cmpi/s 32, 0, 32;
+    %jmp/0xz T_3.3, 5;
+    %pushi/vec4 0, 0, 32;
+    %ix/getv/s 3, v00000166d3eaf680_0;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v00000166d3f1ca10, 0, 4;
+    ; show_stmt_assign_vector: Get l-value for compressed += operand
+    %load/vec4 v00000166d3eaf680_0;
+    %pushi/vec4 1, 0, 32;
+    %add;
+    %cast2;
+    %store/vec4 v00000166d3eaf680_0, 0, 32;
+    %jmp T_3.2;
+T_3.3 ;
+    %end;
+    .scope S_00000166d3eb4550;
+t_0 %join;
+    %jmp T_3.1;
+T_3.0 ;
+    %load/vec4 v00000166d3f1dc30_0;
+    %flag_set/vec4 9;
+    %flag_get/vec4 9;
+    %jmp/0 T_3.6, 9;
+    %load/vec4 v00000166d3f1dc30_0;
+    %pad/u 32;
+    %pushi/vec4 0, 0, 32;
+    %cmp/ne;
+    %flag_get/vec4 4;
+    %and;
+T_3.6;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_3.4, 8;
+    %load/vec4 v00000166d3f1e590_0;
+    %load/vec4 v00000166d3f1dff0_0;
+    %pad/u 7;
+    %ix/vec4 3;
+    %ix/load 4, 0, 0; Constant delay
+    %assign/vec4/a/d v00000166d3f1ca10, 0, 4;
+T_3.4 ;
+T_3.1 ;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_00000166d3ea8150;
+T_4 ;
+    %vpi_call/w 3 10 "$dumpfile", "waveform.vcd" {0 0 0};
+    %vpi_call/w 3 11 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_4;
+    .scope S_00000166d3ea8150;
+T_5 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000166d3f1dd70_0, 0, 1;
+    %delay 500, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000166d3f1dd70_0, 0, 1;
+    %delay 500, 0;
+    %jmp T_5;
+    .thread T_5;
+    .scope S_00000166d3ea8150;
+T_6 ;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v00000166d3f1d0f0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v00000166d3f1d190_0, 0, 1;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v00000166d3f1dcd0_0, 0, 5;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v00000166d3f1e450_0, 0, 5;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v00000166d3f1e3b0_0, 0, 5;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000166d3f1e770_0, 0, 32;
+    %fork TD_tb_register_file.reset_dut, S_00000166d3eb3c80;
+    %join;
+    %vpi_call/w 3 107 "$display", "--- Testing Post-Reset Zero State ---" {0 0 0};
+    %fork t_3, S_00000166d3eb43c0;
+    %jmp t_2;
+    .scope S_00000166d3eb43c0;
+t_3 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000166d3eaff40_0, 0, 32;
+T_6.0 ;
+    %load/vec4 v00000166d3eaff40_0;
+    %cmpi/s 32, 0, 32;
+    %jmp/0xz T_6.1, 5;
+    %load/vec4 v00000166d3eaff40_0;
+    %pad/s 5;
+    %store/vec4 v00000166d3f1e810_0, 0, 5;
+    %load/vec4 v00000166d3eaff40_0;
+    %addi 1, 0, 32;
+    %pad/s 5;
+    %store/vec4 v00000166d3f1d370_0, 0, 5;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000166d3f1d230_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000166d3f1cf10_0, 0, 32;
+    %fork TD_tb_register_file.read_register, S_00000166d3eb3af0;
+    %join;
+    %load/vec4 v00000166d3eaff40_0;
+    %addi 2, 0, 32;
+    %cast2;
+    %store/vec4 v00000166d3eaff40_0, 0, 32;
+    %jmp T_6.0;
+T_6.1 ;
+    %end;
+    .scope S_00000166d3ea8150;
+t_2 %join;
+    %wait E_00000166d3ec92f0;
+    %vpi_call/w 3 114 "$display", "--- Testing register zero after write ---" {0 0 0};
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v00000166d3f1c970_0, 0, 5;
+    %pushi/vec4 4294967295, 0, 32;
+    %store/vec4 v00000166d3f1cab0_0, 0, 32;
+    %fork TD_tb_register_file.write_register, S_00000166d3f1f940;
+    %join;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v00000166d3f1e810_0, 0, 5;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v00000166d3f1d370_0, 0, 5;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000166d3f1d230_0, 0, 32;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v00000166d3f1cf10_0, 0, 32;
+    %fork TD_tb_register_file.read_register, S_00000166d3eb3af0;
+    %join;
+    %wait E_00000166d3ec92f0;
+    %vpi_call/w 3 119 "$display", "--- Testing Indepedent Port ---" {0 0 0};
+    %pushi/vec4 1, 0, 5;
+    %store/vec4 v00000166d3f1c970_0, 0, 5;
+    %pushi/vec4 2882395082, 0, 32;
+    %store/vec4 v00000166d3f1cab0_0, 0, 32;
+    %fork TD_tb_register_file.write_register, S_00000166d3f1f940;
+    %join;
+    %pushi/vec4 2, 0, 5;
+    %store/vec4 v00000166d3f1c970_0, 0, 5;
+    %pushi/vec4 4024220860, 0, 32;
+    %store/vec4 v00000166d3f1cab0_0, 0, 32;
+    %fork TD_tb_register_file.write_register, S_00000166d3f1f940;
+    %join;
+    %pushi/vec4 1, 0, 5;
+    %store/vec4 v00000166d3f1e810_0, 0, 5;
+    %pushi/vec4 2, 0, 5;
+    %store/vec4 v00000166d3f1d370_0, 0, 5;
+    %pushi/vec4 2882395082, 0, 32;
+    %store/vec4 v00000166d3f1d230_0, 0, 32;
+    %pushi/vec4 4024220860, 0, 32;
+    %store/vec4 v00000166d3f1cf10_0, 0, 32;
+    %fork TD_tb_register_file.read_register, S_00000166d3eb3af0;
+    %join;
+    %pushi/vec4 2, 0, 5;
+    %store/vec4 v00000166d3f1e810_0, 0, 5;
+    %pushi/vec4 1, 0, 5;
+    %store/vec4 v00000166d3f1d370_0, 0, 5;
+    %pushi/vec4 4024220860, 0, 32;
+    %store/vec4 v00000166d3f1d230_0, 0, 32;
+    %pushi/vec4 2882395082, 0, 32;
+    %store/vec4 v00000166d3f1cf10_0, 0, 32;
+    %fork TD_tb_register_file.read_register, S_00000166d3eb3af0;
+    %join;
+    %delay 2000, 0;
+    %vpi_call/w 3 129 "$finish" {0 0 0};
+    %end;
+    .thread T_6;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "tb_register_file.sv";
+    "register_file.sv";

@@ -17,7 +17,7 @@ module register_file(
     end
 
     assign read_data1 = (read_reg1 == 0) ? 32'b0 : rf[read_reg1]; //reg 0 is hardwired to 0
-    assign read_data1 = (read_reg2 == 0) ? 32'b0 : rf[read_reg2]; //reg 0 is hardwired to 0
+    assign read_data2 = (read_reg2 == 0) ? 32'b0 : rf[read_reg2]; //reg 0 is hardwired to 0
 
 
 endmodule

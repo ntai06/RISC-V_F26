@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu Sep 10 01:04:15 2026
+[*]
+[dumpfile] "C:\Users\allig\Desktop\RISC-V_F26\waveform.vcd"
+[dumpfile_mtime] "Thu Sep 10 01:00:54 2026"
+[dumpfile_size] 4549
+[savefile] "C:\Users\allig\Desktop\RISC-V_F26\waveform.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-17.000000 260000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 158
+[sst_expanded] 1
+[sst_vpaned_height] 153
+@28
+tb_register_file.clk
+tb_register_file.n_rst
+@22
+tb_register_file.read_data1[31:0]
+tb_register_file.read_data2[31:0]
+tb_register_file.read_reg1[4:0]
+tb_register_file.read_reg2[4:0]
+@28
+tb_register_file.reg_write
+@22
+tb_register_file.write_data[31:0]
+tb_register_file.write_reg[4:0]
+[pattern_trace] 1
+[pattern_trace] 0
