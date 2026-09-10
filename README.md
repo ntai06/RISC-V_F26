@@ -12,3 +12,4 @@
  - compile: & "C:\iverilog\bin\iverilog.exe" -g2012 -o sim.out <module_name>.sv tb_<module_name>.sv
  - run tb: & "C:\iverilog\bin\vvp.exe" sim.out
  - waves: & "C:\iverilog\gtkwave\bin\gtkwave.exe" <vcd_name>.vcd
+ - to use saved wave (name: waveform.gtkw): & "C:\iverilog\gtkwave\bin\gtkwave.exe" waveform.vcd waveform.gtkw
