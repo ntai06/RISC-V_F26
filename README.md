@@ -8,6 +8,14 @@
 - WriteData is the 32 bit data needing to be written @ register at the location of Write Reg
 - ReadData1 is the 32 bit data needing to be read from register @ location of ReadReg1
 - ReadData2 is the 32 bit data needing to be read from register @ location of ReadReg2
+
+## ALU
+- ADD, SUB, AND, OR, XOR 
+- SLT (Set Less Than) if 1st> 2nd? 1: 0 (signed)
+- SLTU (Set Less Than Unsigned) if 1st > 2nd ? 1:0;
+- SLL (logical left shift), SRL (logical right shift), SRA (arithmetic right shift) [keeps sign bit, moves other bits right]
+  
+*need mux to choose what register operand 2 comes from*
 ## To Test:
  - compile: & "C:\iverilog\bin\iverilog.exe" -g2012 -o sim.out <module_name>.sv tb_<module_name>.sv
  - run tb: & "C:\iverilog\bin\vvp.exe" sim.out
