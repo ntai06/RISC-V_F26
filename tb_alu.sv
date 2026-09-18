@@ -23,53 +23,36 @@
                 .result(result),
                 .zero(zero)
             );
-            typedef struct {
+            typedef struct packed{
                 logic [3:0] alu_op;
                 logic [31:0] a,b;
-                logic [31:0] expected_result
+                logic [31:0] expected_result;
                 logic expected_zero;
+                logic [32*8-1:0]desc;
             } test_vector_t;
 
-            test_vector_t test_vectors[]='{
-                '{4'b0000,32'd10,32'd20,32'd30,1'b0},//ADD
-                '{4'b0001,32'd20,32'd10,32'd10,1'b0},//SUB
-                '{4'b0001,32'd20,32'd20,32'd0,1'b1},//zero flag
-                
+            localparam int NUM_TESTS=5;
+            test_vector_t test_vectors[0:NUM_TESTS-1]='{
+                '{4'b0000,32'd10,32'd20,32'd30,1'b0,"Addition"},//ADD
+                '{4'b0001,32'd20,32'd10,32'd10,1'b0,"Subtraction"},//SUB
+                '{4'b0000,32'hFFFF_FFFF,32'd1,32'd0,1'b1,"Overflow and Zero Flag"}, //overflow + zero flag
+                '{4'b0010,32'hFFFF_FFF0,32'hFFFF_F0F0,32'hFFFF_F0F0,1'b0,"AND"}, //AND
+                '{4'b0011,32'hFFFF_0000,32'h0000_FFFF,32'hFFFF_FFFF,1'b0,"OR"}
             };
             initial begin
                 // Initialize stimulus lines
-                n_rst      = 1'b1;
-                reg_write  = 1'b0;
-                read_reg1  = '0;
-                read_reg2  = '0;
-                write_reg  = '0;
-                write_data = '0;
+                foreach(test_vectors[i]) begin
+                    alu_contr=test_vectors[i].alu_op;
+                    a=test_vectors[i].a;
+                    b=test_vectors[i].b;
+                    #10;
+                    $display("Test case: %s",test_vectors[i].desc);
+                    if(result!==test_vectors[i].expected_result || zero !== test_vectors[i].expected_zero) begin
 
-                // Apply reset sequence
-                reset_dut();
-
-                // Verify all 32 registers retain 0 after reset release
-                $display("--- Testing Post-Reset Zero State ---");
-                for (int i = 0; i < 32; i = i + 2) begin
-                    read_register(5'(i), 5'(i+1), 32'h0, 32'h0);
-                end
-                
-                @(negedge clk);
-
-                $display("--- Testing register zero after write ---");
-                write_register(5'd0,32'hFFFF_FFFF);
-                read_register(5'd0,5'd0,32'h0,32'h0);
-
-                @(negedge clk);
-                $display("--- Testing Indepedent Port ---");
-                write_register(5'd1,32'hABCD_DBCA);
-                write_register(5'd2,32'hEFDC_BCBC);
-
-                read_register(5'd1,5'd2,32'hABCD_DBCA,32'hEFDC_BCBC);
-                read_register(5'd2,5'd1,32'hEFDC_BCBC,32'hABCD_DBCA);
-
-                #(CLK_PERIOD * 2);
-
+                        $display("Expected Result : %h, Actual result: %h",test_vectors[i].expected_result,result);
+                        $display("Expected Zero: %b, Actual Zero: %b", test_vectors[i].expected_zero, zero);
+                    end
+                end 
                 
                 $finish;
             end

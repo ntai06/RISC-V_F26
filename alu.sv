@@ -6,16 +6,16 @@ module alu(
 );
     //riscv does not handle overflow
     typedef enum logic [3:0]{
-        ALU_ADD: 4'b0000;
-        ALU_SUB: 4'b0001;
-        ALU_AND: 4'b0010;
-        ALU_OR: 4'b0011;
-        ALU_XOR: 4'b0100;
-        ALU_SLT: 4'b0101; //set less than (signed)
-        ALU_SLTU: 4'b0110; //set less than (unsigned)
-        ALU_SLL: 4'b0111; //logical left shift *all shifts based on bottom 5 bits of operand 2
-        ALU_SRL: 4'b1000; //logical right shift
-        ALU_SRA: 4'b1001; //arithmetic right shift
+        ALU_ADD= 4'b0000,
+        ALU_SUB= 4'b0001,
+        ALU_AND= 4'b0010,
+        ALU_OR= 4'b0011,
+        ALU_XOR= 4'b0100,
+        ALU_SLT= 4'b0101, //set less than (signed)
+        ALU_SLTU= 4'b0110, //set less than (unsigned)
+        ALU_SLL= 4'b0111,//logical left shift *all shifts based on bottom 5 bits of operand 2
+        ALU_SRL= 4'b1000, //logical right shift
+        ALU_SRA= 4'b1001 //arithmetic right shift
     } type_name_t;
     
     always_comb begin
