@@ -31,7 +31,10 @@
             } test_vector_t;
 
             test_vector_t test_vectors[]='{
-                '{4'b0000,32'd10,32'd20,32'd30,1'b0}//ADD
+                '{4'b0000,32'd10,32'd20,32'd30,1'b0},//ADD
+                '{4'b0001,32'd20,32'd10,32'd10,1'b0},//SUB
+                '{4'b0001,32'd20,32'd20,32'd0,1'b1},//zero flag
+                
             };
             initial begin
                 // Initialize stimulus lines
