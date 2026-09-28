@@ -16,8 +16,12 @@
 - SLL (logical left shift), SRL (logical right shift), SRA (arithmetic right shift) [keeps sign bit, moves other bits right]
   
 *need mux to choose what register operand 2 comes from*
+## IMM GEN
+<img width="763" height="234" alt="image" src="https://github.com/user-attachments/assets/1801e1b6-30a6-40e8-96e0-c6c503e5242a" />
+
 ## To Test:
  - compile: & "C:\iverilog\bin\iverilog.exe" -g2012 -o sim.out <module_name>.sv tb_<module_name>.sv
  - run tb: & "C:\iverilog\bin\vvp.exe" sim.out
  - waves: & "C:\iverilog\gtkwave\bin\gtkwave.exe" <vcd_name>.vcd
  - to use saved wave (name: waveform.gtkw): & "C:\iverilog\gtkwave\bin\gtkwave.exe" waveform.vcd waveform.gtkw
+
