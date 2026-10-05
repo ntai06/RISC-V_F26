@@ -20,10 +20,10 @@ module imm_gen(
     always_comb begin
         case(instr[6:0])
             I_TYPE_LOAD, I_TYPE_CALC, I_TYPE_JALR: immediate = {{20{instr[31]}},instr[31:20]}; //12 bit immediate sign extended, same for all I-Type
-            S_TYPE: immediate = {{20{instr[31]},instr[31:25],instr[11:7]}}; //12 bit immediate sign extend as well
-            B_TYPE: immediate = {{20{instr[31]},instr[7],instr[30:25],instr[11:8],1'b0}}; //12 bit immediate sign extend with bit 0 hard coded to 0, aligned to 2 bytes, 13 bit offset instead of 12
+            S_TYPE: immediate = {{20{instr[31]}},instr[31:25],instr[11:7]}; //12 bit immediate sign extend as well
+            B_TYPE: immediate = {{19{instr[31]}},instr[7],instr[30:25],instr[11:8],1'b0}; //12 bit immediate sign extend with bit 0 hard coded to 0, aligned to 2 bytes, 13 bit offset instead of 12
             U_TYPE_LUI, U_TYPE_AUIPC: immediate = {instr[31:12],12'd0};
-            J_TYPE: immediate = {{12{instr[31]}},instr[31],instr[19:12],instr[20],instr[30:21]}; //12 bit immediate sign extend
+            J_TYPE: immediate = {{11{instr[31]}},instr[31],instr[19:12],instr[20],instr[30:21],1'b0}; //12 bit immediate sign extend
             default: immediate =32'd0;
         endcase
     end

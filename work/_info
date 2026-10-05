@@ -1,15 +1,23 @@
 m255
 K4
 z2
-Z0 !s12c _opt1
+Z0 !s12c _opt
 Z1 !s99 nomlopt
 R0
 R1
-R0
+Z2 !s12c _opt2
+R1
+R2
+R1
+Z3 !s12c _opt1
+R1
+R3
+R1
+R3
+R1
+R3
 R1
 R0
-R1
-!s12c _opt
 R1
 !s11f vlog 2025.2 2025.05, May 31 2025
 13
@@ -18,113 +26,154 @@ R1
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 dC:/Users/allig/AppData/Local/quartus
+Z4 dC:/Users/allig/AppData/Local/quartus
 T_opt
 !i145 1
 !i144 0
-!s110 1790118739
-V?JUhHK7C^AJ_W3_go[K4M0
-Z3 04 6 4 work tb_alu fast 0
-=1-6c2408ca1309-6ab30b51-37c-37f4
+!s110 1791227127
+VaUV<72XOiIcAmfJdnHZhJ0
+Z5 04 10 4 work tb_imm_gen fast 0
+=1-6c2408ca1309-6ac3f4f7-14b-674c
 R1
-Z4 !s12f OEM100
-Z5 !s12b OEM100
-Z6 !s124 OEM10U2 
-Z7 !s135 nogc
-o-quiet -auto_acc_if_foreign -work work
-Z8 tCvgOpt 0 defaultOptions 1107585188
+Z6 !s12f OEM100
+Z7 !s12b OEM100
+Z8 !s124 OEM10U2 
+Z9 !s135 nogc
+Z10 o-quiet -auto_acc_if_foreign -work work +acc
+Z11 tCvgOpt 0 defaultOptions 1107585188
 n@_opt
-Z9 OL;O;2025.2;82
-R2
+Z12 OL;O;2025.2;82
 T_opt1
 !i145 1
 !i144 0
 !s110 1790124362
 VZhlmU1h@]EI^aFS:<_TNE1
-R3
+04 6 4 work tb_alu fast 0
 =6-6c2408ca1309-6ab32149-237-7bcc
 R1
-R4
-R5
 R6
 R7
-o-quiet -auto_acc_if_foreign -work work +acc
 R8
-n@_opt1
 R9
-R2
+R10
+R11
+n@_opt1
+R12
+R4
+T_opt2
+!i145 1
+!i144 0
+!s110 1791226766
+VDGB?Ea7?]F6NA4zGRmCd_0
+R5
+=2-6c2408ca1309-6ac3f38e-19a-7c3c
+R1
+R6
+R7
+R8
+R9
+o-quiet -auto_acc_if_foreign -work work
+R11
+n@_opt2
+R12
+R4
 valu
 2C:/Users/allig/Desktop/RISC-V_F26/alu.sv
-Z10 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-Z11 !s110 1790124357
+Z13 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z14 !s110 1790124357
 !i10b 1
 !s100 Yhl3niRd63Cc60MOU;Yh:3
 IaziclaeM4Q5^YSD5_zM_F3
 S1
-Z12 dC:/Users/allig/Desktop/RISC-V_F26
+Z15 dC:/Users/allig/Desktop/RISC-V_F26
 w1789702562
 8C:/Users/allig/Desktop/RISC-V_F26/alu.sv
 FC:/Users/allig/Desktop/RISC-V_F26/alu.sv
 !i122 16
 L0 1 40
-Z13 VDg1SIo80bB@j0V0VzS_@n1
-Z14 OL;L;2025.2;82
+Z16 VDg1SIo80bB@j0V0VzS_@n1
+Z17 OL;L;2025.2;82
 r1
 !s85 0
 31
-Z15 !s108 1790124357.000000
+Z18 !s108 1790124357.000000
 !s107 C:/Users/allig/Desktop/RISC-V_F26/alu.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/allig/Desktop/RISC-V_F26/alu.sv|
 !i113 0
-Z16 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-Z17 tCvgOpt 0 defaultOptions 1085333592
+Z19 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z20 tCvgOpt 0 defaultOptions 1085333592
 vimm_gen
 2C:/Users/allig/Desktop/RISC-V_F26/imm_gen.sv
-R10
-!s110 1790555990
+R13
+Z21 !s110 1791227114
 !i10b 1
-!s100 SWR0L1S6kEj@IW]O<5NL60
-ISOZ^g]:_UY5]E>P;d0ZTa2
+!s100 d2XX0ek4kcPZfVld;aSFV2
+IO11]3oj2d=[UZ`<0=lSEk2
 S1
-R12
-w1790555985
+R15
+w1791226374
 8C:/Users/allig/Desktop/RISC-V_F26/imm_gen.sv
 FC:/Users/allig/Desktop/RISC-V_F26/imm_gen.sv
-!i122 18
+!i122 29
 L0 1 30
-R13
-R14
+R16
+R17
 r1
 !s85 0
 31
-!s108 1790555990.000000
+Z22 !s108 1791227114.000000
 !s107 C:/Users/allig/Desktop/RISC-V_F26/imm_gen.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/allig/Desktop/RISC-V_F26/imm_gen.sv|
 !i113 0
-R16
-R17
+R19
+R20
 vtb_alu
 2C:/Users/allig/Desktop/RISC-V_F26/tb_alu.sv
-R10
-R11
+R13
+R14
 !i10b 1
 !s100 Bc0la`OQ6`<?VO[KlJ^S]1
 IWdhZ<UL[^RLdDG69zN6:i3
 S1
-R12
+R15
 w1790124169
 8C:/Users/allig/Desktop/RISC-V_F26/tb_alu.sv
 FC:/Users/allig/Desktop/RISC-V_F26/tb_alu.sv
 !i122 17
 L0 4 69
-R13
-R14
+R16
+R17
 r1
 !s85 0
 31
-R15
+R18
 !s107 C:/Users/allig/Desktop/RISC-V_F26/tb_alu.sv|
 !s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/allig/Desktop/RISC-V_F26/tb_alu.sv|
 !i113 0
+R19
+R20
+vtb_imm_gen
+2C:/Users/allig/Desktop/RISC-V_F26/tb_imm_gen.sv
+R13
+R21
+!i10b 1
+!s100 Se1BZV7??h0g@Td]IMKN22
+Ib>gnZEkS=d]ZOBVf4PT^j2
+S1
+R15
+w1791227101
+8C:/Users/allig/Desktop/RISC-V_F26/tb_imm_gen.sv
+FC:/Users/allig/Desktop/RISC-V_F26/tb_imm_gen.sv
+!i122 30
+L0 4 52
 R16
 R17
+r1
+!s85 0
+31
+R22
+!s107 C:/Users/allig/Desktop/RISC-V_F26/tb_imm_gen.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|C:/Users/allig/Desktop/RISC-V_F26/tb_imm_gen.sv|
+!i113 0
+R19
+R20
