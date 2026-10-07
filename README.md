@@ -25,3 +25,5 @@
  - waves: & "C:\iverilog\gtkwave\bin\gtkwave.exe" <vcd_name>.vcd
  - to use saved wave (name: waveform.gtkw): & "C:\iverilog\gtkwave\bin\gtkwave.exe" waveform.vcd waveform.gtkw
 
+## Remember
+JALR and JAL write their return address (PC+4) to rd
