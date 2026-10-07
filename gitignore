@@ -1,0 +1,42 @@
+# QuestaSim / ModelSim compiled libraries
+work/
+work_lib/
+libraries/
+modelsim.ini
+
+# QuestaSim runtime and project-generated files
+transcript
+vsim.wlf
+*.wlf
+*.cr.mti
+*.qdb
+*.qpg
+*.ucdb
+vsim_stacktrace.vstf
+
+# Simulation output and waveform dumps
+sim.out
+*.vcd
+*.fst
+*.ghw
+*.log
+*.rpt
+*.jou
+
+# Saved waveform-viewer state
+*.gtkw
+
+# Editor and backup files
+*.bak
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+
+# Keep source, testbench, scripts, and Questa project files tracked:
+#   *.sv  *.svh  *.v  *.vh  *.do  *.mpf  README.md
