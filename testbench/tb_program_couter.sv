@@ -30,9 +30,7 @@
             localparam logic [1:0] PC_JALR    = 2'b01;
             localparam logic [1:0] PC_TARGET  = 2'b10;
 
-            logic [1:0]  random_sel;
-            logic [31:0] random_rs1;
-            logic [31:0] random_immediate;
+    
             // Active-low reset task
             task reset_dut;
             begin
@@ -73,7 +71,7 @@
                 input logic [1:0] test_select,
                 input logic [31:0] test_rs1,
                 input logic [31:0] test_imm,
-                input string test_name
+                input string testname
             );
                 logic [31:0] expected;
                 begin
@@ -85,7 +83,7 @@
 
                     @(posedge clk); //DUT updates pc
                     #1ns;
-                    if(pc!=expected) begin
+                    if(pc!==expected) begin//!== so unknown= fail
                         $display("Failed %s, expected %h, got %h",testname, expected,pc);
                     end else begin
                         $display("Passed %s, expected %h, got %h", testname, expected, pc);
@@ -108,10 +106,10 @@
                     offset>=-256;
                     offset<=256;
                 }
-                constraint target_align{
-                    if(select==PC_TARGET) begin
+                constraint target_align{ //constraint doesnt use begin/end
+                    if(select==PC_TARGET) 
                         offset %2 ==0;
-                    end
+                    
                 }
                 constraint selection_distribution {//weight
                     select dist {
@@ -120,8 +118,18 @@
                         PC_TARGET  := 1
                     };
                 }
-            endclass
 
+
+            endclass
+            property pc_increment;
+                @(posedge clk)
+                disable iff (!n_rst)
+                (pc_sel == PC_DEFAULT) |=>
+                (pc == $past(pc) + 32'd4);
+            endproperty
+
+            assert property (pc_increment)  
+                else $error("PC increment assertion FAILED");
             pc_transaction transaction;
             initial begin
                 // Initialize stimulus lines
@@ -130,10 +138,21 @@
                 rs1_data=32'd0;
                 immediate=32'd0;
 
+                transaction=new();
                 // Apply reset sequence
                 reset_dut();
+                run_test(PC_DEFAULT, 32'd0,32'd0,"Normal PC+4"); //PC+4
+                run_test(PC_TARGET, 32'd0,32'd16,"Positive Offset");//offset +16
+                run_test(PC_TARGET,32'd0,32'hFFFF_FFF0,"Negative Offset");//offset-16
+                run_test(PC_JALR,32'd0,32'h0000_0101,"JALR clear bit 0");
+                repeat(100) begin
+                    if(!transaction.randomize()) begin
+                        $fatal(1,"Transaction randomize failed");
+                    end
+                    run_test(transaction.select, transaction.rs1,transaction.offset,$sformatf("CRV Select = %b, rs1=%h, offset= %0d", transaction.select,transaction.rs1,transaction.offset));
+                    
 
-               
+                end
                 $finish;
             end
 
