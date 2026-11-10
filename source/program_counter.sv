@@ -17,7 +17,7 @@ module program_counter(
     always_ff @(posedge clk, negedge n_rst) begin
         if(!n_rst) begin
             pc<=32'd0;
-        end else begin
+        end else begin  
             pc<=pc_next;
         end
     end
