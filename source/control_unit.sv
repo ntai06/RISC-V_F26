@@ -4,14 +4,19 @@ module control_unit(
     output logic [3:0] alu_contr,
     output logic [1:0] pc_sel,
     output logic reg_write,
-    output logic alu_src
+    output logic alu_src,
+    output logic mem_read,
+    output logic mem_write,
+    output logic mem_to_reg,
+    output logic [2:0] mem_op //to pass to data memory to distinguish between word, halfword, byte
 );
     logic [6:0] opcode;
     logic [2:0] funct3;
     logic funct7; 
-
+    
     assign opcode = instruction[6:0];
     assign funct3= instruction[14:12];
+    assign mem_op=funct3;
     assign funct7_bit5=instruction[30];//only 31st bit matters for instruction decoding
     typedef enum logic [6:0]{
         R_TYPE = 7'b0110011,
@@ -41,10 +46,13 @@ module control_unit(
         ALU_SRA= 4'b1001 //arithmetic right shift
     } alu_t;
     always_comb begin
-        alu_contr= 4'b0000;//default add
+        alu_contr= 4'b0000;//default add, helps for store and load
         pc_sel=2'b00;//pc default
         reg_write=0;
         alu_src=0;
+        mem_read=0;
+        mem_write=0;
+        mem_to_reg=0;
 
         case(opcode)
             R_TYPE: begin
@@ -76,6 +84,13 @@ module control_unit(
                     3'b001: alu_contr=ALU_SLL;//slli
                     3'b101: alu_contr = funct7_bit5 ? ALU_SRA : ALU_SRL; //srai, srli
                 endcase
+            end
+            I_TYPE_LOAD: begin
+                reg_write=1;//writes to register
+                alu_src=1; //uses imm,  memory address = register[rs1]+imm
+                mem_read=1;//loads value from memory into regisiter
+                mem_write=0;
+                mem_to_reg=1;
             end
             B_TYPE: begin
                 reg_write=0;//branches don't write
